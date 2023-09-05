@@ -6,7 +6,6 @@ const hours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 var currentTime = new Date();
 var currentHour = currentTime.getHours();
 const clock = currentTime.toLocaleString();
-console.log (clock);
 
 $(function () {
   const hourBlock = $("#hour-block");
@@ -23,9 +22,16 @@ $(function () {
       ampm = "PM";
       time = `${hour}${ampm}`;
     }
-    
+    // if current time = hour then display present
+    let perspective = "present";
+    if (currentTime == hour) {
+      perspective = present;
+    }
+
+    // if current time > hour then display future
+    // if current time < hour then display past
     $(hourBlock).append(
-      `<div id="hour-${hour}" class="row time-block past">
+      `<div id="hour-${hour}" class="row time-block ${perspective}">
         <div class="col-2 col-md-1 hour text-center py-3">${time}</div>
         <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
         <button class="btn saveBtn col-2 col-md-1" aria-label="save">
@@ -33,6 +39,7 @@ $(function () {
         </button>
       </div>`
     );
+    console.log (perspective)
   }
 
   // TODO: Add a listener for click events on the save button. This code should
