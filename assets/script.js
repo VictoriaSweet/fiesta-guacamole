@@ -5,6 +5,8 @@
 const hours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 var currentTime = new Date();
 var currentHour = currentTime.getHours();
+const clock = currentTime.toLocaleString();
+console.log (clock);
 
 $(function () {
   const hourBlock = $("#hour-block");
