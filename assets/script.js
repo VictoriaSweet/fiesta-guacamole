@@ -5,10 +5,11 @@
 const hours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 var now = new Date();
 var currentHour = now.getHours();
-// const clock = now.toLocaleTimeString();
 
-// var perspective = ["present" , "past" , "future"];
-// present = present class
+const clock = document.getElementById("clock");
+clock.innerHTML = now;
+ //what is the data going to look like for the scheduler in the local storage
+
 $(function () {
   const hourBlock = $("#hour-block");
   for (let index = 0; index < hours.length; index++) {
@@ -48,14 +49,14 @@ $(function () {
       </div>`
     );
 
-console.log(now) //inner text to make time appear on browser page - make div and then inner text.
+    console.log(now) //inner text to make time appear on browser page - make div and then inner text.
 
     // use jquery to find the div with the ID hour-${hour}....
     //inside div there is the button, find the div with that ID and then find the child button using jquery
     console.log($(`#hour-${hour}`));
-// find button in div and add event listener 
+    // find button in div and add event listener 
 
-// bring text back out of local storage like in highscores in challenge 4 
+    // bring text back out of local storage like in highscores in challenge 4 
     // second way - instead of appending hour block as a string, make a jquery object for each of the tags and then you would have the button since it was just created with create element -  when created with this varitation, you would have a "button" created
   }
 
@@ -84,8 +85,3 @@ console.log(now) //inner text to make time appear on browser page - make div and
   //
   // TODO: Add code to display the current date in the header of the page.
 });
-// Select the element with an id of "example"
-const clock = document.getElementById("clock");
-
-// Set the innerHTML of "example" to "Hello, World!"
-clock.innerHTML = now;
