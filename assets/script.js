@@ -5,7 +5,8 @@
 const hours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 var now = new Date();
 var currentHour = now.getHours();
-const clock = now.toLocaleTimeString();
+// const clock = now.toLocaleTimeString();
+
 // var perspective = ["present" , "past" , "future"];
 // present = present class
 $(function () {
@@ -46,6 +47,7 @@ $(function () {
         </button>
       </div>`
     );
+
 console.log(now) //inner text to make time appear on browser page - make div and then inner text.
 
     // use jquery to find the div with the ID hour-${hour}....
@@ -82,3 +84,8 @@ console.log(now) //inner text to make time appear on browser page - make div and
   //
   // TODO: Add code to display the current date in the header of the page.
 });
+// Select the element with an id of "example"
+const clock = document.getElementById("clock");
+
+// Set the innerHTML of "example" to "Hello, World!"
+clock.innerHTML = now;

@@ -5,8 +5,8 @@ body {
   
   #clock { 
     border: solid black ;
-    height:auto;
-    width:auto;
+    height:50px;
+    width:500px;
     color: black;
 
   }
