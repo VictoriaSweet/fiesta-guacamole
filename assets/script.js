@@ -4,9 +4,9 @@ var currentHour = now.getHours();
 let scheduleInfos = ["", "", "", "", "", "", "", "", ""];
 
 const key = "scheduleData";
-// call get item to see what is already in storage
+
 const localStorageSchedule = localStorage.getItem(key);
-// parse it from a string to an array
+
 if (localStorageSchedule != null) {
   scheduleInfos = JSON.parse(localStorageSchedule);
 }
@@ -57,24 +57,20 @@ $(function () {
 
     function saveUserData() {
       const key = "scheduleData";
-      // call get item to see what is already in storage
+
       const localStorageSchedule = localStorage.getItem(key);
-      // parse it from a string to an array
+
       if (localStorageSchedule != null) {
         scheduleInfos = JSON.parse(localStorageSchedule);
       }
 
-      // get what user types into text area
       let textarea = $(`#hour-${hour} textarea`);
 
       // put it in the array
       scheduleInfos[index] = textarea.val();
 
-      //then set array back into local storage ( stringify)
       const scheduleJSON = JSON.stringify(scheduleInfos);
       localStorage.setItem(key, scheduleJSON);
     }
   }
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements.
 });
